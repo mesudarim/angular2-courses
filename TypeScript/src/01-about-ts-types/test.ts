@@ -1,7 +1,7 @@
 import * as chai from 'chai';
 var expect = chai.expect;
 
-describe.only('about ts types', () => {
+describe('about ts types', () => {
   it('1-should compile to plain javascript', () => {
     var boolean: boolean = true; // _
     var integer: number = 6; // _
@@ -46,13 +46,13 @@ describe.only('about ts types', () => {
     function sayHello(name) {
       return 'Hello '.concat(name);
     }
-    expect(sayHello('TypeScript')).to.equal( _ );
+    expect(sayHello('TypeScript')).to.equal( "Hello TypeScript" );
   });
 
   it('7-should infer the type', () => {
     function add(a, b) {
       return a + b;
     }
-    expect(add(17, '25')).to.equal( _ );
+    expect(add(17, '25')).to.equal( "1725" );
   });
 });
