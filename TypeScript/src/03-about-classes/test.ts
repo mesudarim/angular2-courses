@@ -9,14 +9,27 @@ describe('about classes', () => {
   }
 
   it('1-your first class', () => {
-    class SuperHero { } // _
+    class SuperHero {
+
+
+      constructor(firstName : string, familyName: string) {}
+      talk(){
+          return `My favourite saying is : Hi my name is ${this.firstName} ${familyName}`
+      }
+    } // _
 
     var hero = new SuperHero('Bruce', 'Wayne');
     expect(hero.talk()).to.equal('My favourite saying is : Hi my name is Bruce Wayne');
   });
 
   it('2-you can use getter and setters', () => {
-    class Person { } // _
+    class Person {
+      public fullName: string;
+      constructor( private name:string, private familyName:string){
+        this.fullName = `${this.name} + ${this.familyName}`
+      }
+
+    } // _
 
     var person = new Person('John', 'Doe');
     expect(person.fullName).to.equal('John Doe');
